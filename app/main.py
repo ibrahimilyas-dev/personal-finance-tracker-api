@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 
-from app.routes import transactions
+from app.routes import analytics, transactions
 
 app = FastAPI(
     title="Personal Finance Tracker API",
@@ -9,6 +9,7 @@ app = FastAPI(
 )
 
 app.include_router(transactions.router)
+app.include_router(analytics.router)
 
 
 @app.get("/health")
