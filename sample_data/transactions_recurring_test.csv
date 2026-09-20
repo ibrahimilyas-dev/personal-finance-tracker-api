@@ -1,0 +1,12 @@
+date,merchant,description,amount,transaction_type
+2026-06-05,NETFLIX,Monthly subscription,15.99,expense
+2026-07-05,NETFLIX,Monthly subscription,15.99,expense
+2026-08-05,NETFLIX,Monthly subscription,15.99,expense
+2026-09-05,NETFLIX,Monthly subscription,15.99,expense
+2026-06-15,SPOTIFY,Monthly subscription,9.99,expense
+2026-07-15,SPOTIFY,Monthly subscription,9.99,expense
+2026-08-15,SPOTIFY,Monthly subscription,9.99,expense
+2026-06-01,PUREGYM,Gym membership,24.99,expense
+2026-07-01,PUREGYM,Gym membership,24.99,expense
+2026-08-01,PUREGYM,Gym membership,24.99,expense
+2026-09-01,PUREGYM,Gym membership,24.99,expense
