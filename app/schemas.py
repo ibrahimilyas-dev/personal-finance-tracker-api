@@ -37,14 +37,16 @@ class TransactionCreate(TransactionBase):
     pass
 
 
+from pydantic import BaseModel, ConfigDict, Field
+
+
 class TransactionRead(TransactionBase):
     """
     Schema for returning a transaction to the client.
 
     Includes fields the server assigns: id and category.
     """
+    model_config = ConfigDict(from_attributes=True)
+
     id: UUID = Field(default_factory=uuid4)
     category: str
-
-    class Config:
-        from_attributes = True  # allows creation from SQLAlchemy model objects, not just dicts
