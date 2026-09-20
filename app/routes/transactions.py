@@ -4,6 +4,7 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 
 from app import crud
+from app.categorizer import categorize_transaction
 from app.database import get_db
 from app.schemas import TransactionCreate, TransactionRead
 
@@ -12,14 +13,10 @@ router = APIRouter(prefix="/transactions", tags=["transactions"])
 
 @router.post("/", response_model=TransactionRead, status_code=status.HTTP_201_CREATED)
 def create_transaction(transaction: TransactionCreate, db: Session = Depends(get_db)):
-    """
-    Create a new transaction.
-
-    Category assignment is currently a placeholder — Stage 5 replaces
-    this with real rule-based categorisation.
-    """
-    placeholder_category = "Uncategorised"
-    db_transaction = crud.create_transaction(db, transaction, category=placeholder_category)
+    """Create a new transaction, automatically assigning its category
+    based on the merchant name."""
+    category = categorize_transaction(transaction.merchant)
+    db_transaction = crud.create_transaction(db, transaction, category=category)
     return db_transaction
 
 
