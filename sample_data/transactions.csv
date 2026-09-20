@@ -1,0 +1,7 @@
+date,merchant,description,amount,transaction_type
+2026-08-01,TESCO,Weekly shop,52.30,expense
+2026-08-02,UBER,Ride to work,8.75,expense
+2026-08-03,SHELL,Petrol,45.00,expense
+2026-08-05,NETFLIX,Monthly subscription,15.99,expense
+2026-08-15,SPOTIFY,Monthly subscription,9.99,expense
+2026-08-28,EMPLOYER LTD,Monthly salary,2500.00,income
